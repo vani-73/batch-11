@@ -1,9 +1,6 @@
 pipeline {
     agent any
-    environment {
-        // Use PATH+EXTRA to append to PATH properly
-        PATH = "/usr/bin:/bin:/opt/homebrew/bin"
-    }
+   
     stages {
 
         stage('pull scm') {
@@ -16,14 +13,7 @@ pipeline {
                 sh 'mvn validate'
             }
         }
-        stage('compile') {
-            steps {
-                sh 'mvn compile'
-            }
-        }
-
-        
-        
+    
     }
 
   post{
