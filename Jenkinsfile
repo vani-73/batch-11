@@ -4,11 +4,13 @@ pipeline {
         stage('Release Preparation') {
             steps {
                 echo 'Preparing for release build...'
+                sh 'mvn compile'
             }
         }
         stage('Build') {
             steps {
                 echo 'Building the release version...'
+                sh 'mvn clean instal'
             }
         }
         
